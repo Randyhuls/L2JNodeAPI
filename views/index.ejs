@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= process.env.DISPLAY_NAME %> | v<%= packageJSON.version %></title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="<%= packageJSON.author || process.env.DISPLAY_NAME %>">
+        <meta name="description" content="<%= packageJSON.description || 'L2J Node API' %>">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1><%= process.env.DISPLAY_NAME %> | v<%= packageJSON.version %></h1>
+            </header>
+    
+            <main role="main">
+    
+            </main>
+    
+            <footer>
+                <em>Copyright © <%= packageJSON.author %>, <%= new Date().getFullYear() %></em>
+            </footer>
+        </div>
+    </body>
+</html>

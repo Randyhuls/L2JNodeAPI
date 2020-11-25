@@ -1,11 +1,11 @@
 {
   "name": "l2j_node_api",
   "version": "1.0.0",
-  "description": "NodeJS api for L2J requests",
+  "description": "NodeJS API for L2J requests",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js -r dotenv/config"
+    "start": "node -r dotenv/config server.js "
   },
   "author": "R.C.B. Huls",
   "license": "ISC",
