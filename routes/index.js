@@ -1,5 +1,5 @@
 module.exports = {
     AuthRoute: require('./auth.route'),
-    PlayerRoute: require('./player.route'),
+    CharacterRoute: require('./character.route'),
     UserRoute: require('./user.route')
 }

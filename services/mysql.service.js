@@ -1,20 +1,21 @@
 const mysql = require('mysql')
 
-const { SQL_HOST, SQL_USER, SQL_PASSWORD, SQL_L2GS_DATABASE, SQL_L2LS_DATABASE } = process.env
+const { SQL_HOST, SQL_PORT, SQL_USER, SQL_PASSWORD, SQL_L2GS_DATABASE, SQL_L2LS_DATABASE } = process.env
 
-const basicDBData = {
+const basicDBConfig = {
     host: SQL_HOST,
+    port: SQL_PORT,
     user: SQL_USER,
     password: SQL_PASSWORD
 }
 
 const l2gsConnection = mysql.createConnection({
-    ...basicDBData,
+    ...basicDBConfig,
     database: SQL_L2GS_DATABASE
 })
 
 const l2lsConnection = mysql.createConnection({
-    ...basicDBData,
+    ...basicDBConfig,
     database: SQL_L2LS_DATABASE
 })
 
