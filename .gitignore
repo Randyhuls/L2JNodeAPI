@@ -1,0 +1,9 @@
+# Node modules
+node_modules
+
+# Environment file(s)
+.env
+
+# IDE
+.vscode
+!.vscode/tasks.json
