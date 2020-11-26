@@ -28,7 +28,7 @@ app.set('view engine', 'ejs')
 app.set('views', 'views')
 
 // ROUTES
-app.get('/', (_, res) => res.render('index.ejs', { packageJSON })) // Should pass all available endpoints with descriptions
+app.get('/', (_, res) => res.render('index.ejs', { packageJSON })) // TODO: Should pass all available endpoints with descriptions to be visible inside html
 
 // REST API
 app.use('/auth', AuthRoute)

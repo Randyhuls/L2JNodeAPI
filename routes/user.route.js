@@ -1,7 +1,7 @@
 const express = require('express')
 const user = express.Router()
 const { getUserDetails } = require('../api/user.api')
-const { getCharacterDetails } = require('../api/character.api')
+const { getCharacterDetails, getInventory } = require('../api/character.api')
 const { isSignedIn, hasUserAccessRights, hasCharacterAccessRights } = require('../services/auth.service')
 
 /**

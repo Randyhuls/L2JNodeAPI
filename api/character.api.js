@@ -20,7 +20,7 @@ const getCharacterDetails = (charId) => {
 
 const getInventory = (charId) => {
     return new Promise((resolve, reject) => {
-        l2gsConnection.query(`SELECT * FROM items WHERE ownerId = '${charId}'`, (err, results) => {
+        l2gsConnection.query(`SELECT * FROM items WHERE owner_id = '${charId}'`, (err, results) => {
             if (err) return reject(err)
             resolve(results[0])
         })  
