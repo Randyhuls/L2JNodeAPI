@@ -26,7 +26,7 @@ It's currently **under development** with more features on its way.
 
 #### Authentication
 
-> **NOTE:** All requests require the user to be authentication with [JSON webtokens](https://jwt.io/introduction/) OR have admin rights in the L2J SQL database (`accessLevel = 8`)
+> **NOTE:** All *user* and *character* requests require the user to be authenticated with [JSON webtokens](https://jwt.io/introduction/) OR have admin rights set in the L2J SQL database (`accessLevel = 8`)
 
 
 > `/auth/register` and `/auth/sign-in` each return an object with a JWT inside. You'll have to store this token locally and pass it along with each request as a Bearer Authorization header.
@@ -45,7 +45,7 @@ Sign out of the webserver
 `
 /auth/sign-in
 `
-#### User and player details
+#### User and player details (requires [authentication](#authentication))
 
 Get your L2J server account details  
 `
