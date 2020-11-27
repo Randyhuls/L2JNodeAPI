@@ -4,7 +4,7 @@ const compression = require('compression')
 const packageJSON = require('./package.json')
 const { passport } = require('./services/auth.service')
 const { l2gsConnection, l2lsConnection, connect } = require('./services/mysql.service')
-const { AuthRoute, UserRoute } = require('./routes')
+const { AuthRoute, ServerRoute, UserRoute } = require('./routes')
 
 // ENV VARS
 const { DISPLAY_NAME, PORT } = process.env
@@ -26,6 +26,7 @@ app.get('/', (_, res) => res.render('index.ejs', { packageJSON })) // TODO: Shou
 
 // REST API
 app.use('/auth', AuthRoute)
+app.use('/server', ServerRoute)
 app.use('/user', UserRoute)
 
 app.listen(PORT, () => {
