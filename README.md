@@ -31,38 +31,38 @@ It's currently **under development** with more features on its way.
 
 > `/auth/register` and `/auth/sign-in` each return an object with a JWT inside. You'll have to store this token locally and pass it along with each request as a Bearer Authorization header.
 
-Register an account on the L2J server
+Register an account on the L2J server  
 `
 /auth/register
 `
 
-Sign in to the webserver with your L2J server credentials
+Sign in to the webserver with your L2J server credentials  
 `
 /auth/sign-in
 `
 
-Sign out of the webserver
+Sign out of the webserver  
 `
 /auth/sign-in
 `
 #### User and player details
 
-Get your L2J server account details
+Get your L2J server account details  
 `
 /user/account/<username>
 `
 
-Returns basic info on your account's character
+Returns basic info on your account's character  
 `
 /user/character/<charId>
 `
 
-Returns basic info on all your account's characters
+Returns basic info on all your account's characters  
 `
 /user/characters/<username>
 `
 
-Returns the characters inventory items
+Returns the characters inventory items  
 `
 /user/inventory/<charId>
 `
