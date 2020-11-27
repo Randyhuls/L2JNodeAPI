@@ -4,20 +4,14 @@ const compression = require('compression')
 const packageJSON = require('./package.json')
 const { passport } = require('./services/auth.service')
 const { l2gsConnection, l2lsConnection, connect } = require('./services/mysql.service')
-
-const app = express()
-
-// ENV VARS
-const { DISPLAY_NAME, PORT, BASE_DEV_URL, PROD_DEV_URL } = process.env
-
-const { isDEV } = require('./helpers')
 const { AuthRoute, UserRoute } = require('./routes')
 
-// GLOBALLY ACCESSIBLE
-const baseUrl = isDEV() ? `${BASE_DEV_URL}` : `${PROD_DEV_URL}`
-app.locals = { ...app.locals, baseUrl }
+// ENV VARS
+const { DISPLAY_NAME, PORT } = process.env
 
 // EXPRESS CONFIG
+const app = express()
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(compression())
