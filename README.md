@@ -69,47 +69,47 @@ Returns the characters inventory items
 
 #### Server details
 
-Get online status of server
+Get online status of server  
 `
 /server/status/
 `
 
-Get announcements
+Get announcements  
 `
 /server/announcements/
 `
 
-Get top 10 highest level players
+Get top 10 highest level players  
 `
 /server/top-players/
 `
 
-Get top 10 highest PKers
+Get top 10 highest PKers  
 `
 /server/top-pkers/
 `
 
-Get top 10 highest PvPers
+Get top 10 highest PvPers  
 `
 /server/top-pvpers/
 `
 
-Get top 10 players that played the most
+Get top 10 players that played the most  
 `
 /server/top-playtime-players/
 `
 
-Get number of players currently online
+Get number of players currently online  
 `
 /server/online-players/
 `
 
-Get players that are currently PK and online
+Get players that are currently PK and online  
 `
 /server/online-pkers/
 `
 
-Returns GMs, including whether they are online or not
+Returns GMs, including whether they are online or not  
 `
 /server/top-playtime-players/
 `
