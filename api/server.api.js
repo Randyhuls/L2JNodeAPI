@@ -12,7 +12,7 @@ const getServers = () => {
 
 const getAnnouncements = () => {
     return new Promise((resolve, reject) => {
-        l2gsConnection.query('SELECT * FROM announcements', (err, results) => {
+        l2gsConnection.query('SELECT * FROM announcements DESC', (err, results) => {
             if (err) return reject(err)
             resolve(results)
         })
