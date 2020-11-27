@@ -3,7 +3,7 @@
 This API was created as a simple way to pull L2J server data to your website or mobile app.  
 It's currently **under development** with more features on its way.
 
-![image info](./public/images/logo_l2j_node_api_02.svg)
+![image info](./public/images/logo_l2j_node_api_02.png)
 
 > **Note**: This API has currently only been tested with L2J's `MASTER` branch (Lineage II High Five).  
 >  Checkout the [L2J website](https://www.l2jserver.com/) for more info on setting up your own private Lineage II server.
