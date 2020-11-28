@@ -41,10 +41,6 @@ Sign in to the webserver with your L2J server credentials
 /auth/sign-in
 `
 
-Sign out of the webserver  
-`
-/auth/sign-in
-`
 #### User and player details (requires [authentication](#authentication))
 
 Get your L2J server account details  
@@ -186,7 +182,7 @@ let token = response.data.token // JWT from earlier auth request
 // Only characters that belong to the authenticated account can be retrieved, 
 // unless the account doing requests is an admin (accessLevel = 8)
 async function getPlayerByUsername(charId) {
-    // Make a request for account data with the JWT passed as Bearer Authorization header
+    // Make a request for player data with the JWT passed as Bearer Authorization header
     let request = {
         method: 'GET',
         headers: { 
@@ -218,7 +214,7 @@ let token = response.data.token // JWT from earlier auth request
 // Only characters that belong to the authenticated account can be retrieved, 
 // unless the account doing requests is an admin (accessLevel = 8)
 async function getCharactersByUsername(username) {
-    // Make a request for account data with the JWT passed as Bearer Authorization header
+    // Make a request for player data with the JWT passed as Bearer Authorization header
     let request = {
         method: 'GET',
         headers: { 
