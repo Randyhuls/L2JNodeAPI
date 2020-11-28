@@ -43,7 +43,7 @@ It's currently **under development** with more features on its way.
 | GET   | `/user/account/<username>`    | Get your L2J server account details                 | `username[string]` | 
 | GET   | `/user/character/<charId>`    | Returns basic info on your account's character      | `charId[string]`   |  
 | GET   | `/user/characters/<username>` | Returns basic info on all your account's characters | `username[string]` |  
-| GET   | `/user/inventory/<charId>`    | Returns the characters inventory items              | `char[string]`     |  
+| GET   | `/user/inventory/<charId>`    | Returns the characters inventory items              | `charId[string]`   |  
 
 #### Server details
 
