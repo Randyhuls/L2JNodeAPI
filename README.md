@@ -76,9 +76,10 @@ async function signIn() {
 
     // Both /auth/sign-in and /auth/register endpoints return a JWT
     let response = await fetch('http://localhost:1337/auth/sign-in', request)
-    let token = response.data.token
 
     try {
+        let json = await response.json()
+        let token = json.data.token
         // Now you can do additional requests with the token
         console.log('My JSON webtoken: ', token)
         // Example token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
@@ -110,9 +111,9 @@ async function getUserByUsername(username) {
     }
 
     let response = await fetch(`http://localhost:1337/user/account/${username}`, request)
-    let user = await response.json()
 
     try {
+        let user = await response.json()
         // Do something with 'user'
         console.log('My user data: ', user)
         ...  
@@ -143,9 +144,9 @@ async function getPlayerByUsername(charId) {
     }
 
     let response = await fetch(`http://localhost:1337/user/character/${charId}`, request)
-    let character = await response.json()
 
     try {
+        let character = await response.json()
         // Do something with 'character'
         console.log('My character\'s data: ', character)
         ...  
@@ -176,9 +177,9 @@ async function getCharactersByUsername(username) {
     }
 
     let response = await fetch(`http://localhost:1337/user/characters/${username}`, request)
-    let characters = await response.json()
 
     try {
+        let characters = await response.json()
         // Do something with 'characters'
         console.log('My characters: ', characters)
         ...  
