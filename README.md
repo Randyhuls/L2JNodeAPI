@@ -1,6 +1,6 @@
 # L2J Node API
-### A simple NodeJS based API for your private L2Java server
-This API was created as a simple way to pull L2J server data to your website or mobile app.  
+### A simple NodeJS based RESTful API for your private L2Java server
+This RESTful API was created as a simple way to pull L2J server data to your website or mobile app.  
 It's currently **under development** with more features on its way.
 
 ![image info](./public/images/logo_l2j_node_api_02.png)
@@ -38,59 +38,26 @@ It's currently **under development** with more features on its way.
 
 #### User and player details (requires [authentication](#authentication))
 
-| Method | API Endpoint                 | Description                                         | Parameters |
-| :----- | :--------------------------- |:----------------------------------------------------| :----------|
-| GET   | `/user/account/<username>`    | Get your L2J server account details                 | `None`     | 
-| GET   | `/user/character/<charId>`    | Returns basic info on your account's character      | `None`     |  
-| GET   | `/user/characters/<username>` | Returns basic info on all your account's characters | `None`     |  
-| GET   | `/user/inventory/<charId>`    | Returns the characters inventory items              | `None`     |  
+| Method | API Endpoint                 | Description                                         | Parameters         |
+| :----- | :--------------------------- |:----------------------------------------------------| :------------------|
+| GET   | `/user/account/<username>`    | Get your L2J server account details                 | `username[string]` | 
+| GET   | `/user/character/<charId>`    | Returns basic info on your account's character      | `charId[string]`   |  
+| GET   | `/user/characters/<username>` | Returns basic info on all your account's characters | `username[string]` |  
+| GET   | `/user/inventory/<charId>`    | Returns the characters inventory items              | `char[string]`     |  
 
 #### Server details
 
-Get online status of server  
-`
-/server/status/
-`
-
-Get announcements  
-`
-/server/announcements/
-`
-
-Get top 10 highest level players  
-`
-/server/top-players/
-`
-
-Get top 10 highest PKers  
-`
-/server/top-pkers/
-`
-
-Get top 10 highest PvPers  
-`
-/server/top-pvpers/
-`
-
-Get top 10 players that played the most  
-`
-/server/top-playtime-players/
-`
-
-Get number of players currently online  
-`
-/server/online-players/
-`
-
-Get players that are currently PK and online  
-`
-/server/online-pkers/
-`
-
-Returns GMs, including whether they are online or not  
-`
-/server/top-playtime-players/
-`
+| Method | API Endpoint                   | Description                                           | Parameters |
+| :----- | :----------------------------- |:------------------------------------------------------| :----------|
+| GET   | `/server/status/`               | Get online status of server                           | `None`     | 
+| GET   | `/server/announcements/`        | Get announcements                                     | `None`     |  
+| GET   | `/server/top-players/`          | Get top 10 highest level players                      | `None`     | 
+| GET   | `/server/top-pkers/`            | Get top 10 highest PKers                              | `None`     | 
+| GET   | `/server/top-pvpers/`           | Get top 10 highest PvPers                             | `None`     |  
+| GET   | `/server/top-playtime-players/` | Get top 10 players that played the most               | `None`     | 
+| GET   | `/server/online-players/`       | Get number of players currently online                | `None`     | 
+| GET   | `/server/online-pkers/`         | Get players that are currently PK and online          | `None`     | 
+| GET   | `/server/top-playtime-players/` | Returns GMs, including whether they are online or not | `None`     | 
 
 ## Example
 
