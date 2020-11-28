@@ -28,18 +28,13 @@ It's currently **under development** with more features on its way.
 
 > **NOTE:** All *user* and *character* requests require the user to be authenticated with [JSON webtokens](https://jwt.io/introduction/) OR have admin rights set in the L2J SQL database (`accessLevel = 8`)
 
-
 > `/auth/register` and `/auth/sign-in` each return an object with a JWT inside. You'll have to store this token locally and pass it along with each request as a Bearer Authorization header.
 
-Register an account on the L2J server  
-`
-/auth/register
-`
 
-Sign in to the webserver with your L2J server credentials  
-`
-/auth/sign-in
-`
+| METHOD | API Endpoint       | Description                                                 | Parameters                                                            |
+| ------ | -----------------: |:-----------------------------------------------------------:| ------------------- -------------------------------------------------:|
+| POST   | `/auth/register`   | Register an account on the L2J server                       | `username[string]`, `password[string]`, `passwordConfirmation[string` |
+| POST   | `/auth/sign-in`    | Sign in to the webserver with your L2J account              | `username[string]`, `password[string]`|                                          
 
 #### User and player details (requires [authentication](#authentication))
 
