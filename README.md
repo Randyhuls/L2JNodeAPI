@@ -31,32 +31,19 @@ It's currently **under development** with more features on its way.
 > `/auth/register` and `/auth/sign-in` each return an object with a JWT inside. You'll have to store this token locally and pass it along with each request as a Bearer Authorization header.
 
 
-| METHOD | API Endpoint       | Description                                                 | Parameters                                                            |
-| :----- | :----------------- |:-----------------------------------------------------------:| ---------------------------------------------------------------------:|
+| Method | API Endpoint       | Description                                                 | Parameters                                                            |
+| :----- | :----------------- |:------------------------------------------------------------| :---------------------------------------------------------------------|
 | POST   | `/auth/register`   | Register an account on the L2J server                       | `username[string]`, `password[string]`, `passwordConfirmation[string` |
 | POST   | `/auth/sign-in`    | Sign in to the webserver with your L2J account              | `username[string]`, `password[string]`|                                          
 
 #### User and player details (requires [authentication](#authentication))
 
-Get your L2J server account details  
-`
-/user/account/<username>
-`
-
-Returns basic info on your account's character  
-`
-/user/character/<charId>
-`
-
-Returns basic info on all your account's characters  
-`
-/user/characters/<username>
-`
-
-Returns the characters inventory items  
-`
-/user/inventory/<charId>
-`
+| Method | API Endpoint                 | Description                                         | Parameters |
+| :----- | :--------------------------- |:----------------------------------------------------| :----------|
+| GET   | `/user/account/<username>`    | Get your L2J server account details                 | `None`     | 
+| GET   | `/user/character/<charId>`    | Returns basic info on your account's character      | `None`     |  
+| GET   | `/user/characters/<username>` | Returns basic info on all your account's characters | `None`     |  
+| GET   | `/user/inventory/<charId>`    | Returns the characters inventory items              | `None`     |  
 
 #### Server details
 
