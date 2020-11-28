@@ -12,12 +12,12 @@ user.get('/account/:username', [isSignedIn, hasUserAccessRights], (req, res) => 
     getUserDetails(username)    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'User does not exist' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'User does not exist' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(401).json({ status: 401, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -26,8 +26,8 @@ user.get('/account/:username', [isSignedIn, hasUserAccessRights], (req, res) => 
 user.get('/character/:charId/', [isSignedIn, hasCharacterAccessRights], (req, res) => {
     const { charId } = req.params
     getCharacterDetails(charId)
-    .then(response => res.status(200).json(response))
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .then(response => res.status(200).json({ status: 200, msg: 'Success', data: response, error: null }))
+    .catch(err => res.status(401).json({ status: 401, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -36,8 +36,8 @@ user.get('/character/:charId/', [isSignedIn, hasCharacterAccessRights], (req, re
 user.get('/inventory/:charId', [isSignedIn, hasCharacterAccessRights], (req, res) => {
     const { charId } = req.params
     getInventory(charId)
-    .then(response => res.status(200).json(response))
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .then(response => res.status(200).json({ status: 200, msg: 'Success', data: response, error: null }))
+    .catch(err => res.status(401).json({ status: 401, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -48,12 +48,12 @@ user.get('/characters/:username/', [isSignedIn, hasUserAccessRights], (req, res)
     getCharactersByUsername(username)
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'User has not yet created a character' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'User has not yet created a character' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(401).json({ status: 401, msg: 'Error', data: null, error: err }))
 })
 
 module.exports = user

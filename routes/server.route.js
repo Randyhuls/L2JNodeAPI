@@ -15,12 +15,12 @@ server.get('/status', (req, res) => {
         let isOnline = !!response
 
         if (!isOnline) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'Servers unavailable' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'Servers unavailable' })
         } else {
-            res.status(200).json({ msg: 'Success', data: { isOnline }, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: { isOnline }, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(401).json({ status: 401, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -30,12 +30,12 @@ server.get('/announcements', (req, res) => {
     getAnnouncements()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(200).json({ msg: 'Error', data: null, error: 'No announcements available' })
+            res.status(200).json({ status: 200, msg: 'Error', data: null, error: 'No announcements available' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -45,12 +45,12 @@ server.get('/top-players', (req, res) => {
     getTopLevelPlayers()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'Servers unavailable' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'Servers unavailable' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -60,12 +60,12 @@ server.get('/top-pkers', (req, res) => {
     getTopPKers()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'Servers unavailable' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'Servers unavailable' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -75,12 +75,12 @@ server.get('/top-pvpers', (req, res) => {
     getTopPVPers()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'Servers unavailable' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'Servers unavailable' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -90,12 +90,12 @@ server.get('/top-playtime-players', (req, res) => {
     getLongestPlayTimePlayers()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'Servers unavailable' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'Servers unavailable' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -105,12 +105,12 @@ server.get('/gms', (req, res) => {
     getGMs()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(400).json({ msg: 'Error', data: null, error: 'Servers unavailable' })
+            res.status(400).json({ status: 400, msg: 'Error', data: null, error: 'Servers unavailable' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -120,12 +120,12 @@ server.get('/online-pkers', (req, res) => {
     getOnlinePKers()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(200).json({ msg: 'Success', data: null, error: 'No pkers online' })
+            res.status(200).json({ status: 200, msg: 'Success', data: null, error: 'No pkers online' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 /**
@@ -135,12 +135,12 @@ server.get('/online-players', (req, res) => {
     getNrOfOnlinePlayers()    
     .then(response => {
         if (!response || response.length === 0) {
-            res.status(200).json({ msg: 'Success', data: null, error: 'No players online' })
+            res.status(200).json({ status: 200, msg: 'Success', data: null, error: 'No players online' })
         } else {
-            res.status(200).json({ msg: 'Success', data: response, error: null })
+            res.status(200).json({ status: 200, msg: 'Success', data: response, error: null })
         }
     })
-    .catch(err => res.status(401).json({ msg: 'Error', data: null, error: err }))
+    .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: null, error: err }))
 })
 
 module.exports = server

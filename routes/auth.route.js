@@ -10,24 +10,19 @@ const auth = express.Router()
 auth.get('/sign-in', (req, res, next) => {
     passport.authenticate('local', { session: false }, (err, user, info) => {
         if (!user || err) {
-            return res.status(401).json({ msg: 'Error', data: null, error: 'Username or password are incorrect' })
+            return res.status(401).json({ status: 401, msg: 'Error', data: null, error: 'Username or password are incorrect' })
         } else {
             req.login(user, { session: false }, (err) => {
-                if (err) return res.status(401).json({ msg: 'Error', data: err, error: 'Unable to authenticate user' })
+                if (err) return res.status(401).json({ status: 401, msg: 'Error', data: err, error: 'Unable to authenticate user' })
 
                 // Sign and return json web token
                 const token = signJSONWebToken(user)
 
                 // Return token to user for local storage
-                return res.status(200).json({ msg: 'Success', data: { token }, error: null })
+                return res.status(200).json({ status: 200, msg: 'Success', data: { token }, error: null })
             })
         }
     })(req, res, next)
-})
-
-auth.get('/sign-out', (req, res) => {
-    req.logout()
-    res.status(200).json({ msg: 'Success', data: null, error: null })
 })
 
 auth.post('/register', (req, res) => {
@@ -38,23 +33,23 @@ auth.post('/register', (req, res) => {
         .then(async () => {
             const user = await getUser(username)
             
-            if (!user) res.status(500).json({ msg: 'Error', data: err, error: 'Could not retrieve user' })
+            if (!user) res.status(500).json({ status: 500, msg: 'Error', data: err, error: 'Could not retrieve user' })
 
             req.login(user, { session: false }, err => {
-                if (err) return res.status(401).json({ msg: 'Error', data: err, error: 'Unable to authenticate user' })
+                if (err) return res.status(401).json({ status: 401, msg: 'Error', data: err, error: 'Unable to authenticate user' })
                 
                 // Sign and return json web token
                 const token = signJSONWebToken(user)
 
                 // Return token to user for local storage
-                return res.status(200).json({ msg: 'Success', data: { token }, error: null })
+                return res.status(200).json({ status: 200, msg: 'Success', data: { token }, error: null })
             })
         })
-        .catch(err => res.status(400).json({ msg: 'Error', data: err, error: 'Could not create user account' }))
+        .catch(err => res.status(400).json({ status: 400, msg: 'Error', data: err, error: 'Could not create user account' }))
     } else if (!username) {
-        return res.status(401).json({ msg: 'Error', data: err, error: 'Username is required' })
+        return res.status(401).json({ status: 401, msg: 'Error', data: err, error: 'Username is required' })
     } else {
-        return res.status(401).json({ msg: 'Error', data: err, error: 'Passwords do not match' })
+        return res.status(401).json({ status: 401, msg: 'Error', data: err, error: 'Passwords do not match' })
     }
 })
 
