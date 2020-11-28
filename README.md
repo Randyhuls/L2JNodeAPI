@@ -109,7 +109,8 @@ async function getUserByUsername(username) {
         credentials: 'include'
     }
 
-    let user = await fetch(`http://localhost:1337/user/account/${username}`, request)
+    let response = await fetch(`http://localhost:1337/user/account/${username}`, request)
+    let user = await response.json()
 
     try {
         // Do something with 'user'
@@ -141,7 +142,8 @@ async function getPlayerByUsername(charId) {
         credentials: 'include'
     }
 
-    let character = await fetch(`http://localhost:1337/user/character/${charId}`, request)
+    let response = await fetch(`http://localhost:1337/user/character/${charId}`, request)
+    let character = await response.json()
 
     try {
         // Do something with 'character'
@@ -173,7 +175,8 @@ async function getCharactersByUsername(username) {
         credentials: 'include'
     }
 
-    let characters = await fetch(`http://localhost:1337/user/characters/${username}`, request)
+    let response = await fetch(`http://localhost:1337/user/characters/${username}`, request)
+    let characters = await response.json()
 
     try {
         // Do something with 'characters'
