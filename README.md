@@ -33,7 +33,7 @@ It's currently **under development** with more features on its way.
 
 | Method | API Endpoint       | Description                                                 | Parameters                                                            |
 | :----- | :----------------- |:------------------------------------------------------------| :---------------------------------------------------------------------|
-| POST   | `/auth/register`   | Register an account on the L2J server                       | `username[string]`, `password[string]`, `passwordConfirmation[string` |
+| POST   | `/auth/register`   | Register an account on the L2J server                       | `username[string]`, `password[string]`, `passwordConfirmation[string]` |
 | POST   | `/auth/sign-in`    | Sign in to the webserver with your L2J account              | `username[string]`, `password[string]`|                                          
 
 #### User and player details (requires [authentication](#authentication))
